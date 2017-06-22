@@ -1,0 +1,82 @@
+HTTP/1.1 302 Found
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache
+Location: http://qu0t45brxthD01Ju_mi0Uowww-abuse.web.ctfcompetition.com/login
+X-Cloud-Trace-Context: c15b2539580576e84573472386177659
+Date: Sat, 17 Jun 2017 20:47:26 GMT
+Server: Google Frontend
+Content-Length: 0
+
+HTTP/1.1 302 Found
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache
+Location: http://qu0t45brxthd01ju_mi0uowww-abuse.web.ctfcompetition.com/
+X-Cloud-Trace-Context: 783db4eece9aea0d7c74e1f8068b03ad
+Date: Sat, 17 Jun 2017 20:47:27 GMT
+Server: Google Frontend
+Content-Length: 0
+
+HTTP/1.1 200 OK
+Date: Sat, 17 Jun 2017 20:47:27 GMT
+Expires: Sat, 17 Jun 2017 20:57:27 GMT
+Cache-Control: public, max-age=600
+ETag: "xhryxQ"
+X-Cloud-Trace-Context: e0a8a93f4634efc98bea75f719e7c33d;o=1
+Content-Type: text/html
+Server: Google Frontend
+Transfer-Encoding: chunked
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>~~Login~~</title>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">~Login~</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <script>
+        if(location.search) {
+          var div = document.currentScript.parentNode.appendChild(document.createElement('div'));
+          div.className = 'alert alert-danger';
+          div.role = 'alert';
+          div.appendChild(document.createTextNode(unescape(location.search.match(/e=(.*)/)[1])));
+        }
+      </script>
+      <form action="/login" method="post" class="form-signin">
+        <div>
+          <input name="user" pattern="admin" class="input-block-level" placeholder="username">
+          <input name="password"
+                 pattern="CTF[{]qu0t45[a-z0-9_]{16}www-[0-9A-Za-z_-]{64}[}]"
+                 type="password"
+                 placeholder="password"
+                 class="input-block-level">
+        </div>
+        <div><input type="submit" class="btn btn-large btn-primary" value="~Login~"></div>
+      </form>
+    </div>
+  </body>
+</html>

