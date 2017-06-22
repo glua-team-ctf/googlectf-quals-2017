@@ -1,6 +1,6 @@
 ## Mindreader
 ### Description
-Category: Miscellaneous
+Category: Miscellaneous  
 Difficulty: Easy
 ```
 Can you read my mind?
@@ -23,10 +23,10 @@ Visiting the challenge URL produces a web page:
 </html>
 ```
 ### File reading
-We guess that `f` stands for `file` and this script will read file contents.
+We guess that `f` stands for `file` and this script will read file contents.  
 Reading `flag` and `flag.txt` yielded nothing.
 
-Since this is an easy challenge we also guess that it's vulnerable to directory traversal.
+Since this is an easy challenge we also guess that it's vulnerable to directory traversal.  
 Fetching https://mindreader.web.ctfcompetition.com/?f=../../../../../etc/passwd confirmed this:
 ```
 notcake@knotcake:~/googlectf$ curl https://mindreader.web.ctfcompetition.com/?f=../../../../../etc/passwd
@@ -34,7 +34,7 @@ root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 ...
 ```
-The flag was also not here.
+The flag was also not here.  
 It turned out that https://mindreader.web.ctfcompetition.com/?f=/etc/passwd also worked.
 
 ### Reading the page's source
