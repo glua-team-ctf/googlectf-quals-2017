@@ -39,16 +39,17 @@ So, which cards are burnt?
 Answer with a string of zeroes and ones, no spaces.
 ```
 
+- Connecting to `anon.ctfcompetition.com:1337` creates a different instance of the problem each time
+- We need to identify which of cards `ccard0x1` to `ccard0x40` are `flagged` in the dump and submit the bitstring it forms
+- Card and account names are hashed in the dump
+- We can only dump once
+
 - New accounts we create are named `uaccount0x%x`
 - New cards we create are named `ucard0x%x`
 - We can link accounts we create to the cards of interest, `ccard0x%x`
-- Card and account names are hashed in the dump
-- Connecting to `anon.ctfcompetition.com:1337` creates a different instance of the problem each time.
-- We need to identify which of cards `ccard0x1` to `ccard0x40` are `flagged` in the dump and submit the bitstring it forms.
 
 Card and account associations form a graph.  
-We don't get the card and account names in the dump, only the graph structure.  
-We need some way to identify cards and accounts from the graph structure alone.
+Since we don't get the card and account names in the dump, we need some way to identify cards and accounts from the graph structure alone.
 
 ### Idea 1
 - Create 0x40 accounts, `uaccount0x1` to `uaccount0x40`
