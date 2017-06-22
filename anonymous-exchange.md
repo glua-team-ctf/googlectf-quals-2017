@@ -95,7 +95,6 @@ This is easily identifiable (2 edges to nodes with 1 edge).
 
 #### Card-2 and account-2 markers
 The previous markers aren't unique enough so we nest them further.  
-The code to generate and identify level 2 markers is almost the same as above.
 ```
 C   C C   C    A   A A   A
  \ /   \ /      \ /   \ /
