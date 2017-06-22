@@ -178,7 +178,7 @@ end
 
 #### Card sequence
 We need to be able to identify `ccard0x1`, so we attach an account-2 marker on it.  
-We also need a way to get the next card in the series, so we join all the cards together with an account "backbone" that can identify using card-2 markers.
+We also need a way to get the next card in the series, so we join all the cards together with an account "backbone" that can be identified using card-2 markers.
 ```
 A   A A   A
  \ /   \ /
