@@ -92,51 +92,9 @@ A   A    C   C
   ?        ?
 ```
 This is easily identifiable (2 edges to nodes with 1 edge).
-##### Generation
-```lua
-local card = 0
-local function alloc_card()
-	card = card + 1
-	print("newcard")
-	return "ucard0x" .. string.format("%x", card)
-end
-
--- same structure for function alloc_account()
-
-local function bind(card, account)
-	print("assoc " .. card .. " " .. account)
-end
-
-local function card_sparkler_1()
-	local card = alloc_card()
-	bind(card, alloc_account())
-	bind(card, alloc_account())
-	return card
-end
-
--- same structure for function account_sparkler_1()
-```
-##### Identification
-```lua
-function is_card_sparkler_1(card)
-	if cards[card].account_count ~= 3 then return false end
-	
-	local terminal_accounts = 0
-	for account in pairs(cards[card].accounts) do
-		if accounts[account].card_count == 1 then
-			terminal_accounts = terminal_accounts + 1
-		end
-	end
-	
-	return terminal_accounts == 2
-end
-
--- and the same for function is_account_sparkler_1(account)
-```
 
 #### Card-2 and account-2 markers
 The previous markers aren't unique enough so we nest them further.  
-The code to generate and identify level 2 markers is almost the same as above.
 ```
 C   C C   C    A   A A   A
  \ /   \ /      \ /   \ /
@@ -146,34 +104,6 @@ C   C C   C    A   A A   A
      C              A
      |              |
      ?              ?
-```
-##### Generation
-```lua
-local function card_sparkler_2()
-	local card = alloc_card()
-	bind(card, account_sparkler_1())
-	bind(card, account_sparkler_1())
-	return card
-end
-
--- same structure for function account_sparkler_2()
-```
-##### Identification
-```lua
-function is_card_sparkler_2(card)
-	if cards[card].account_count ~= 3 then return false end
-	
-	local terminal_accounts = 0
-	for account in pairs(cards[card].accounts) do
-		if is_account_sparkler_1(account) then
-			terminal_accounts = terminal_accounts + 1
-		end
-	end
-	
-	return terminal_accounts == 2
-end
-
--- and the same for function is_account_sparkler_2(card)
 ```
 
 #### Card sequence
@@ -204,54 +134,6 @@ ccard0x3f
      A-- <card-2 marker>
     /
 ccard0x40
-```
-##### Generation
-```lua
--- head
-bind("ccard0x1", account_sparkler_2())
-
--- backbone
-for i = 2, 0x40 do
-	local account = alloc_account()
-  
-	bind("ccard0x" .. string.format("%x", i - 1), account)
-	bind("ccard0x" .. string.format("%x", i), account)
-	bind(card_sparkler_2(), account)
-end
-```
-##### Identification
-```lua
-function is_account_spine(account)
-	if is_account_sparkler_1(account) then return false end
-	
-	for card in pairs(accounts[account].cards) do
-		if is_card_sparkler_2(card) then return true end
-	end
-	
-	return false
-end
-
-function next_link(account, previous_card)
-	-- find the card that's not the previous card and
-	-- not a sparkler
-	for card in pairs(accounts[account].cards) do
-		if card == previous_card or
-		   (not previous_card and is_card_sparkler_1(card)) or
-		   (previous_card and is_card_sparkler_2(card)) then
-		else
-			-- found the right card
-			-- find the next account connector if there is one
-			for next_account in pairs(cards[card].accounts) do
-				if next_account == account then
-				elseif is_account_spine(next_account) then
-					return card, next_account
-				end
-			end
-			
-			return card, nil
-		end
-	end
-end
 ```
 
 ```lua
