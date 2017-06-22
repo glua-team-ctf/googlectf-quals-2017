@@ -103,9 +103,9 @@ And this gives us the first flag: `ctf{with_crypt0_d0nt_ro11_with_it}`
 (The flag was actually stored in the `VALUE` column of a table named `FLAG` in the SQLite database.)
 
 ### Flag 2
-There are 6 tables in the SQLite database: `Diff`, `DiffSet`, `FLAG`, `NoteSet`, `Notes` and `android_metadata`.
-Under `NoteSet` and `DiffSet` there is a note called `flag.txt` - and the flag we want is probably somewhere in that note's history, represented as diffs.
-`DiffSet` tells us that `DiffSet`s 36 to 74 inclusive correspond to `flag.txt`.
+There are 6 tables in the SQLite database: `Diff`, `DiffSet`, `FLAG`, `NoteSet`, `Notes` and `android_metadata`.  
+Under `NoteSet` and `DiffSet` there is a note called `flag.txt` - and the flag we want is probably somewhere in that note's history, represented as diffs.  
+`DiffSet` tells us that `DiffSet`s 36 to 74 inclusive correspond to `flag.txt`.  
 `Diff` has 5 columns: `(int ID, bool Insertion, int IDX, string Diff, int DiffSet)`.
 
 Luckily `NotesApp.apk` contains code to handle diffs and we can use it to get the flag at the end of DiffSet 66: `ctf{puZZ1e_As_old_as_tIme}`
