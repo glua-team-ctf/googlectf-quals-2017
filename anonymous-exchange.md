@@ -11,7 +11,7 @@ Challenge running at anon.ctfcompetition.com:1337
 
 ### Exploration
 ```
-notcake@knotcake:~/googlectf$ nc anon.ctfcompetition.com 1337
+notcake@notcake:~/googlectf$ nc anon.ctfcompetition.com 1337
 Hey. Could you tell me if my cards ccard0x1 through ccard0x40 have attracted the wrong type of attention? Flagged cards are displayed in their dumps, and their encryption is deterministic. I seem to have the wrong encoding on my terminal, so I'll need help there.
 I'll patch you into a management interface in a few seconds.
 
