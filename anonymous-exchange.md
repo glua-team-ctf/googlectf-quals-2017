@@ -43,7 +43,6 @@ Answer with a string of zeroes and ones, no spaces.
 - We need to identify which of cards `ccard0x1` to `ccard0x40` are `flagged` in the dump and submit the bitstring it forms
 - Card and account names are hashed in the dump
 - We can only dump once
-
 - New accounts we create are named `uaccount0x%x`
 - New cards we create are named `ucard0x%x`
 - We can link accounts we create to the cards of interest, `ccard0x%x`
