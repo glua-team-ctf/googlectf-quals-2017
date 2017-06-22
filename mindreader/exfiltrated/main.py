@@ -9,7 +9,12 @@ app = Flask(__name__)
 
 INDEX = open('index.html').read()
 
-HALL_OF_SHAME = []
+HALL_OF_SHAME = [
+    '173.171.203.59',
+    '2a02:6b8:b010:6026:84:201:185:197',
+    '35.185.158.159',
+    '81.17.25.8'
+]
 
 @app.route('/')
 def index():
