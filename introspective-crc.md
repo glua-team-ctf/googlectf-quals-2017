@@ -11,7 +11,7 @@ Challenge running at selfhash.ctfcompetition.com:1337
 ```
 
 ### Exploration
-Let's connect to selfhash.ctfcompetition.com:1337 and see what happens.
+Let's connect to `selfhash.ctfcompetition.com:1337` and see what happens.
 ```
 notcake@notcake:~/googlectf$ nc selfhash.ctfcompetition.com 1337
 Give me some data: aaa
