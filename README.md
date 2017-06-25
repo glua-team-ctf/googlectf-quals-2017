@@ -1,10 +1,9 @@
 # Google CTF 2017 Writeups
 
-- [mindreader](mindreader.md)
-- [Joe](joe.md)
-- [JohnnyBoy](johnnyboy.md)
-- [Introspective CRC](introspective-crc.md)
-- [Geokitties v2](geokitties-v2.md)
-- [Anonymous exchange](anonymous-exchange.md)
-- [Secret Notes](secret-notes.md)
-- [Secret Notes 2](secret-notes.md)
+- [Crypto – Introspective CRC](crypto/introspective-crc/README.md)
+- [Misc – Anonymous Exchange](misc/anonymous-exchange/README.md)
+- [Misc – Mindreader](misc/mindreader/README.md)
+- [Misc – Secret Notes 1 + 2](misc/secret-notes/README.md)
+- [Reversing – JohnnyBoy](reversing/johnnyboy/README.md)
+- [Web – Geokities v2](web/geokitties-v2/README.md)
+- [Web – Joe](web/joe/README.md)
